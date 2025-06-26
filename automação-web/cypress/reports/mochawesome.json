@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-26T14:18:12.781Z",
+    "end": "2025-06-26T14:18:17.638Z",
+    "duration": 4857,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "446d2691-db58-4999-b9a2-4c45cefa016d",
+      "title": "",
+      "fullFile": "cypress/e2e/carrinho.cy.js",
+      "file": "cypress/e2e/carrinho.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "185ade4e-0416-4e9e-bbc2-008bf0c9add1",
+          "title": "Carrinho de compras",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adicionar produto ao carrinho",
+              "fullTitle": "Carrinho de compras Adicionar produto ao carrinho",
+              "timedOut": null,
+              "duration": 2597,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.btn_inventory').first().click();\ncy.get('.shopping_cart_badge').should('contain', '1');",
+              "err": {},
+              "uuid": "273ac6d4-176a-4b67-89cf-bb4ab9fe9e03",
+              "parentUUID": "185ade4e-0416-4e9e-bbc2-008bf0c9add1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remover produto do carrinho",
+              "fullTitle": "Carrinho de compras Remover produto do carrinho",
+              "timedOut": null,
+              "duration": 939,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.btn_inventory').first().click();\ncy.get('.btn_secondary').first().click();\ncy.get('.shopping_cart_badge').should('not.exist');",
+              "err": {},
+              "uuid": "4da243eb-b908-45bf-a306-f5a71272f2b8",
+              "parentUUID": "185ade4e-0416-4e9e-bbc2-008bf0c9add1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar produtos adicionados",
+              "fullTitle": "Carrinho de compras Validar produtos adicionados",
+              "timedOut": null,
+              "duration": 1269,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.btn_inventory').eq(0).click();\ncy.get('.btn_inventory').eq(1).click();\ncy.get('.shopping_cart_link').click();\ncy.get('.cart_item').should('have.length', 2);",
+              "err": {},
+              "uuid": "6338da8d-da28-4427-8d6a-929a20896002",
+              "parentUUID": "185ade4e-0416-4e9e-bbc2-008bf0c9add1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "273ac6d4-176a-4b67-89cf-bb4ab9fe9e03",
+            "4da243eb-b908-45bf-a306-f5a71272f2b8",
+            "6338da8d-da28-4427-8d6a-929a20896002"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4805,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

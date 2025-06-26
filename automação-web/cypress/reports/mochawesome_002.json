@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-06-26T14:18:30.456Z",
+    "end": "2025-06-26T14:18:38.239Z",
+    "duration": 7783,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c8160790-49ca-4d97-b498-ff62a6699a2b",
+      "title": "",
+      "fullFile": "cypress/e2e/login.cy.js",
+      "file": "cypress/e2e/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "69418862-240d-46f2-80b9-26deb025eb73",
+          "title": "Login e Logout",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login com credenciais corretas",
+              "fullTitle": "Login e Logout Login com credenciais corretas",
+              "timedOut": null,
+              "duration": 1519,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(url);\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click();\ncy.url().should('include', '/inventory.html');",
+              "err": {},
+              "uuid": "25994c0c-3104-44ff-b4ba-ed4eb02fd6ba",
+              "parentUUID": "69418862-240d-46f2-80b9-26deb025eb73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com credenciais incorretas",
+              "fullTitle": "Login e Logout Login com credenciais incorretas",
+              "timedOut": null,
+              "duration": 788,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(url);\ncy.get('#user-name').type('usuario_invalido');\ncy.get('#password').type('senha_invalida');\ncy.get('#login-button').click();\ncy.get('[data-test=\"error\"]').should('be.visible');",
+              "err": {},
+              "uuid": "b9eefbab-3f20-427a-b945-29f57cfb5d68",
+              "parentUUID": "69418862-240d-46f2-80b9-26deb025eb73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Logout após login",
+              "fullTitle": "Login e Logout Logout após login",
+              "timedOut": null,
+              "duration": 5413,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(url);\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click();\ncy.get('.bm-burger-button > button').click(); // abre menu lateral\ncy.get('#logout_sidebar_link').click();\ncy.url().should('eq', url);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'https://www.saucedemo.com/v1/index.html' to equal 'https://www.saucedemo.com/v1/'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'https://www.saucedemo.com/v1/index.html' to equal 'https://www.saucedemo.com/v1/'\n    at Context.eval (webpack:///./cypress/e2e/login.cy.js:27:15)",
+                "diff": "- 'https://www.saucedemo.com/v1/index.html'\n+ 'https://www.saucedemo.com/v1/'\n"
+              },
+              "uuid": "004c4555-a878-49c0-9b0d-ea6a1222f07b",
+              "parentUUID": "69418862-240d-46f2-80b9-26deb025eb73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "25994c0c-3104-44ff-b4ba-ed4eb02fd6ba",
+            "b9eefbab-3f20-427a-b945-29f57cfb5d68"
+          ],
+          "failures": [
+            "004c4555-a878-49c0-9b0d-ea6a1222f07b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7720,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
