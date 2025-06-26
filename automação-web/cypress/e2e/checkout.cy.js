@@ -29,7 +29,7 @@ describe('Checkout', () => {
       cy.get('#first-name').type('Igor');
       cy.get('#last-name').type('Brandao');
       cy.get('#postal-code').type('70300-000');
-      cy.get('.cart_button').click();
+      cy.get('.cart_button').contains('Continue').click();
       cy.get('.cart_button').contains('Finish').click();
       cy.get('.complete-header').should('contain', 'THANK YOU FOR YOUR ORDER');
     });

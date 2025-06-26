@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 1,
-    "start": "2025-06-26T14:18:18.736Z",
-    "end": "2025-06-26T14:18:29.437Z",
-    "duration": 10701,
+    "start": "2025-06-26T14:50:05.075Z",
+    "end": "2025-06-26T14:50:15.583Z",
+    "duration": 10508,
     "testsRegistered": 3,
     "passPercent": 66.66666666666666,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c20fef62-81bb-416f-abf6-d4bf23b7ba6f",
+      "uuid": "66c52177-25da-48d7-b308-7e86e5ab24ae",
       "title": "",
       "fullFile": "cypress/e2e/checkout.cy.js",
       "file": "cypress/e2e/checkout.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a22ff9e8-399d-4db9-af54-74cb7cf6952d",
+          "uuid": "73b4068c-8024-490e-a111-407e6f568033",
           "title": "Checkout",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Preencher dados obrigatórios e continuar",
               "fullTitle": "Checkout Preencher dados obrigatórios e continuar",
               "timedOut": null,
-              "duration": 2892,
+              "duration": 2826,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.get('#first-name').type('Igor');\ncy.get('#last-name').type('Brandao');\ncy.get('#postal-code').type('70300-000');\ncy.get('.cart_button').click();\ncy.url().should('include', 'checkout-step-two');",
               "err": {},
-              "uuid": "266ed295-0e20-425d-aad4-d67383607f7f",
-              "parentUUID": "a22ff9e8-399d-4db9-af54-74cb7cf6952d",
+              "uuid": "c14d7349-717d-4444-8de5-28cb27c2183e",
+              "parentUUID": "73b4068c-8024-490e-a111-407e6f568033",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validar resumo da compra",
               "fullTitle": "Checkout Validar resumo da compra",
               "timedOut": null,
-              "duration": 1823,
+              "duration": 1808,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.get('#first-name').type('Igor');\ncy.get('#last-name').type('Brandao');\ncy.get('#postal-code').type('70300-000');\ncy.get('.cart_button').click();\ncy.get('.summary_info').should('be.visible');",
               "err": {},
-              "uuid": "4eaa1bd0-c596-41fa-a2ef-640dcff335c2",
-              "parentUUID": "a22ff9e8-399d-4db9-af54-74cb7cf6952d",
+              "uuid": "5b2496ac-c347-43c1-8645-66bde2a0da6e",
+              "parentUUID": "73b4068c-8024-490e-a111-407e6f568033",
               "isHook": false,
               "skipped": false
             },
@@ -74,36 +74,36 @@
               "title": "Finalizar compra com sucesso",
               "fullTitle": "Checkout Finalizar compra com sucesso",
               "timedOut": null,
-              "duration": 5905,
+              "duration": 5797,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "cy.get('#first-name').type('Igor');\ncy.get('#last-name').type('Brandao');\ncy.get('#postal-code').type('70300-000');\ncy.get('.cart_button').click();\ncy.get('.cart_button').contains('Finish').click();\ncy.get('.complete-header').should('contain', 'THANK YOU FOR YOUR ORDER');",
+              "code": "cy.get('#first-name').type('Igor');\ncy.get('#last-name').type('Brandao');\ncy.get('#postal-code').type('70300-000');\ncy.get('.cart_button').contains('Continue').click();\ncy.get('.cart_button').contains('Finish').click();\ncy.get('.complete-header').should('contain', 'THANK YOU FOR YOUR ORDER');",
               "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Finish' within the element: <a.btn_action.cart_button> but never did.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Finish' within the element: <a.btn_action.cart_button> but never did.\n    at Context.eval (webpack:///./cypress/e2e/checkout.cy.js:33:29)",
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Continue' within the element: <input.btn_primary.cart_button> but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Continue' within the element: <input.btn_primary.cart_button> but never did.\n    at Context.eval (webpack:///./cypress/e2e/checkout.cy.js:32:29)",
                 "diff": null
               },
-              "uuid": "b2609d34-c6d7-4eaa-bea2-d34d8457e0ec",
-              "parentUUID": "a22ff9e8-399d-4db9-af54-74cb7cf6952d",
+              "uuid": "5d652a1c-a8e9-4141-ab02-3091538e8e99",
+              "parentUUID": "73b4068c-8024-490e-a111-407e6f568033",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "266ed295-0e20-425d-aad4-d67383607f7f",
-            "4eaa1bd0-c596-41fa-a2ef-640dcff335c2"
+            "c14d7349-717d-4444-8de5-28cb27c2183e",
+            "5b2496ac-c347-43c1-8645-66bde2a0da6e"
           ],
           "failures": [
-            "b2609d34-c6d7-4eaa-bea2-d34d8457e0ec"
+            "5d652a1c-a8e9-4141-ab02-3091538e8e99"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 10620,
+          "duration": 10431,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

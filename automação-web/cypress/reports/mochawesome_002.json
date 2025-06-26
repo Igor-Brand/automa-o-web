@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 1,
-    "start": "2025-06-26T14:18:30.456Z",
-    "end": "2025-06-26T14:18:38.239Z",
-    "duration": 7783,
+    "start": "2025-06-26T14:50:16.544Z",
+    "end": "2025-06-26T14:50:24.421Z",
+    "duration": 7877,
     "testsRegistered": 3,
     "passPercent": 66.66666666666666,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c8160790-49ca-4d97-b498-ff62a6699a2b",
+      "uuid": "ed0cd127-6fde-47d9-83e1-5850e51e8631",
       "title": "",
       "fullFile": "cypress/e2e/login.cy.js",
       "file": "cypress/e2e/login.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "69418862-240d-46f2-80b9-26deb025eb73",
+          "uuid": "f9b65237-342e-49f0-9898-743ddacf0756",
           "title": "Login e Logout",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Login com credenciais corretas",
               "fullTitle": "Login e Logout Login com credenciais corretas",
               "timedOut": null,
-              "duration": 1519,
+              "duration": 1707,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.visit(url);\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click();\ncy.url().should('include', '/inventory.html');",
               "err": {},
-              "uuid": "25994c0c-3104-44ff-b4ba-ed4eb02fd6ba",
-              "parentUUID": "69418862-240d-46f2-80b9-26deb025eb73",
+              "uuid": "6f01e861-a76a-4d84-aa98-674436d3974a",
+              "parentUUID": "f9b65237-342e-49f0-9898-743ddacf0756",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Login com credenciais incorretas",
               "fullTitle": "Login e Logout Login com credenciais incorretas",
               "timedOut": null,
-              "duration": 788,
+              "duration": 795,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.visit(url);\ncy.get('#user-name').type('usuario_invalido');\ncy.get('#password').type('senha_invalida');\ncy.get('#login-button').click();\ncy.get('[data-test=\"error\"]').should('be.visible');",
               "err": {},
-              "uuid": "b9eefbab-3f20-427a-b945-29f57cfb5d68",
-              "parentUUID": "69418862-240d-46f2-80b9-26deb025eb73",
+              "uuid": "f519ed07-f0d5-44d0-a624-a5ba6ca19a39",
+              "parentUUID": "f9b65237-342e-49f0-9898-743ddacf0756",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Logout após login",
               "fullTitle": "Login e Logout Logout após login",
               "timedOut": null,
-              "duration": 5413,
+              "duration": 5303,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -87,23 +87,23 @@
                 "estack": "AssertionError: Timed out retrying after 4000ms: expected 'https://www.saucedemo.com/v1/index.html' to equal 'https://www.saucedemo.com/v1/'\n    at Context.eval (webpack:///./cypress/e2e/login.cy.js:27:15)",
                 "diff": "- 'https://www.saucedemo.com/v1/index.html'\n+ 'https://www.saucedemo.com/v1/'\n"
               },
-              "uuid": "004c4555-a878-49c0-9b0d-ea6a1222f07b",
-              "parentUUID": "69418862-240d-46f2-80b9-26deb025eb73",
+              "uuid": "56df64d1-b497-49dd-b1b2-f8d7247aa88f",
+              "parentUUID": "f9b65237-342e-49f0-9898-743ddacf0756",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "25994c0c-3104-44ff-b4ba-ed4eb02fd6ba",
-            "b9eefbab-3f20-427a-b945-29f57cfb5d68"
+            "6f01e861-a76a-4d84-aa98-674436d3974a",
+            "f519ed07-f0d5-44d0-a624-a5ba6ca19a39"
           ],
           "failures": [
-            "004c4555-a878-49c0-9b0d-ea6a1222f07b"
+            "56df64d1-b497-49dd-b1b2-f8d7247aa88f"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 7720,
+          "duration": 7805,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
