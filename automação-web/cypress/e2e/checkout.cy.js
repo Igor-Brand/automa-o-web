@@ -26,12 +26,25 @@ describe('Checkout', () => {
     });
   
     it('Finalizar compra com sucesso', () => {
-      cy.get('#first-name').type('Igor');
-      cy.get('#last-name').type('Brandao');
-      cy.get('#postal-code').type('70300-000');
-      cy.get('.cart_button').contains('Continue').click();
-      cy.get('.cart_button').contains('Finish').click();
-      cy.get('.complete-header').should('contain', 'THANK YOU FOR YOUR ORDER');
+      cy.get('#first-name').type('Flavio');
+      cy.get('#last-name').type('Benatti');
+      cy.get('#postal-code').type('12345-678');
+    
+      cy.get('[value="CONTINUE"]').click();
+    
+      cy.contains('Payment Information').should('be.visible');
+      cy.contains('Item total:').should('be.visible');
+    
+      // Clicar no link com texto 'FINISH' como no Robot
+      cy.contains('a', 'FINISH').click();
+    
+      // Validar mensagem de sucesso
+      cy.contains('THANK YOU FOR YOUR ORDER').should('be.visible');
     });
+    
+    
+    
+
+    
   });
   

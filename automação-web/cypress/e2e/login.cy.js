@@ -1,30 +1,39 @@
-describe('Login e Logout', () => {
-    const url = 'https://www.saucedemo.com/v1/';
-  
-    it('Login com credenciais corretas', () => {
-      cy.visit(url);
-      cy.get('#user-name').type('standard_user');
-      cy.get('#password').type('secret_sauce');
-      cy.get('#login-button').click();
-      cy.url().should('include', '/inventory.html');
-    });
-  
-    it('Login com credenciais incorretas', () => {
-      cy.visit(url);
-      cy.get('#user-name').type('usuario_invalido');
-      cy.get('#password').type('senha_invalida');
-      cy.get('#login-button').click();
-      cy.get('[data-test="error"]').should('be.visible');
-    });
-  
-    it('Logout após login', () => {
-      cy.visit(url);
-      cy.get('#user-name').type('standard_user');
-      cy.get('#password').type('secret_sauce');
-      cy.get('#login-button').click();
-      cy.get('.bm-burger-button > button').click(); // abre menu lateral
-      cy.get('#logout_sidebar_link').click();
-      cy.url().should('eq', url);
-    });
+describe('Testes de Login na Saucedemo', () => {
+  const URL = 'https://www.saucedemo.com/v1/';
+  const USUARIO_OK = 'standard_user';
+  const SENHA_OK = 'secret_sauce';
+
+  beforeEach(() => {
+    cy.visit(URL);
   });
-  
+
+  it('Login com sucesso', () => {
+    cy.get('#user-name').type(USUARIO_OK);
+    cy.get('#password').type(SENHA_OK);
+    cy.get('#login-button').click();
+
+    cy.contains('Products').should('be.visible');
+  });
+
+  it('Logout após login com sucesso', () => {
+    cy.get('#user-name').type(USUARIO_OK);
+    cy.get('#password').type(SENHA_OK);
+    cy.get('#login-button').click();
+
+    cy.contains('Products').should('be.visible');
+
+    cy.get('.bm-burger-button').click();
+    cy.get('#logout_sidebar_link').click();
+
+    cy.get('#login-button').should('be.visible');
+  });
+
+  it('Login com usuário ou senha inválidos', () => {
+    cy.get('#user-name').type('usuario_invalido');
+    cy.get('#password').type('senha_errada');
+    cy.get('#login-button').click();
+
+    // Verifica se aparece a mensagem de erro
+    cy.get('[data-test=error]').should('contain.text', 'Epic sadface: Username and password do not match any user in this service');
+  });
+});
